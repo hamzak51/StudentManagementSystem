@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "97246252-a8dd-4ba9-b8ab-faa658ca3e62",
+		"name": "StudentService API Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45334985",
+		"_collection_link": "https://hamzakhan-6994652.postman.co/workspace/9a571b8d-9b34-49ab-8b83-17e6844827a5/collection/45334985-97246252-a8dd-4ba9-b8ab-faa658ca3e62?action=share&source=collection_link&creator=45334985"
+	},
+	"item": [
+		{
+			"name": "Get All Students (GET)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response is array\", () => {\r",
+							"    pm.expect(pm.response.json()).to.be.an(\"array\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7190/api/Student",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7190",
+					"path": [
+						"api",
+						"Student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Student (POST)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contains name\", function () {\r",
+							"    const json = pm.response.json();\r",
+							"    pm.expect(json).to.have.property(\"name\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Asim\",\r\n    \"rollNo\": \"60\",\r\n    \"course\": \"PST\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7190/api/Student",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7190",
+					"path": [
+						"api",
+						"Student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Student (DELETE)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", () => {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Asim\",\r\n    \"rollNo\": \"60\",\r\n    \"course\": \"PST\"\r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:7190/api/Student/21",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7190",
+					"path": [
+						"api",
+						"Student",
+						"21"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

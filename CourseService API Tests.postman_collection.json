@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "4b3e38df-b2c3-4a52-b794-9f8a6e6bbaad",
+		"name": "CourseService API Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45334985",
+		"_collection_link": "https://hamzakhan-6994652.postman.co/workspace/9a571b8d-9b34-49ab-8b83-17e6844827a5/collection/45334985-4b3e38df-b2c3-4a52-b794-9f8a6e6bbaad?action=share&source=collection_link&creator=45334985"
+	},
+	"item": [
+		{
+			"name": "Get All Courses (GET)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7231/api/Course",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7231",
+					"path": [
+						"api",
+						"Course"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"courseName\": \"Database\",\r\n    \"instructor\": \"Asim Riaz\",\r\n    \"creditHours\": \"3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7231/api/Course",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7231",
+					"path": [
+						"api",
+						"Course"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"1\",\r\n    \"courseName\": \"FOP LAB\",\r\n    \"instructor\": \"Taha Memon\",\r\n    \"creditHours\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7231/api/Course/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7231",
+					"path": [
+						"api",
+						"Course",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
